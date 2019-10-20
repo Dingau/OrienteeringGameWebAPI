@@ -35,6 +35,7 @@ namespace CoordinatesAPI.Controllers
             _context.Coordinates.Add(coordinates);
             _context.SaveChanges();
 
+
             return Ok(new { response = "Data saved! " + data.lat + " and " + data.longt }); //galima grazinti tik man suprantama koda, butu logiskiau.
         }
     }
