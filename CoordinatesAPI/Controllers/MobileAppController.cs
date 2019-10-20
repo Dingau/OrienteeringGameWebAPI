@@ -28,6 +28,7 @@ namespace CoordinatesAPI.Controllers
         [HttpPost]
         public IHttpActionResult Post([FromBody]dynamic data)
         {
+
             try
             {
                 AppInfoModel coordinates = new AppInfoModel();
