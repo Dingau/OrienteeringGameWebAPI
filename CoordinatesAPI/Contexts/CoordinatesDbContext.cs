@@ -9,7 +9,7 @@ namespace CoordinatesAPI.Contexts
 {
     public class CoordinatesDbContext : DbContext
     {
-        public CoordinatesDbContext() : base()
+        public CoordinatesDbContext() : base("name = DefaultConnection")
         { }
         public DbSet<AppInfoModel> Coordinates { get; set; }
     }
