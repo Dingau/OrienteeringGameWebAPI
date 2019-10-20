@@ -29,7 +29,6 @@ namespace CoordinatesAPI.Controllers
         public IHttpActionResult Post([FromBody]dynamic data)
         {
             AppInfoModel coordinates = new AppInfoModel();
-            //coordinates.ID = 1;
             coordinates.Latitude = data.lat;
             coordinates.Longitude = data.longt;
             coordinates.UserId = data.userId;
