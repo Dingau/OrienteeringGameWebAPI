@@ -28,15 +28,23 @@ namespace CoordinatesAPI.Controllers
         [HttpPost]
         public IHttpActionResult Post([FromBody]dynamic data)
         {
-            AppInfoModel coordinates = new AppInfoModel();
-            coordinates.Latitude = data.lat;
-            coordinates.Longitude = data.longt;
-            coordinates.UserId = data.userId;
-            _context.Coordinates.Add(coordinates);
-            _context.SaveChanges();
+            try
+            {
+                AppInfoModel coordinates = new AppInfoModel();
+                coordinates.Latitude = data.lat;
+                coordinates.Longitude = data.longt;
+                coordinates.UserId = data.userId;
+                _context.Coordinates.Add(coordinates);
+                _context.SaveChanges();
 
 
-            return Ok(new { response = "Data saved! " + data.lat + " and " + data.longt }); //galima grazinti tik man suprantama koda, butu logiskiau.
+                return Ok(new { response = "Data saved! " + data.lat + " and " + data.longt }); //galima grazinti tik man suprantama koda, butu logiskiau.
+
+            }
+            catch (Exception)
+            {
+                return Ok(new { response = "error in saving!" });
+            }
         }
     }
 }
